@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  border: 2px solid rgb(136, 236, 103);
+  font-size: larger;
+  border-color: cadetblue;
+  color: rgb(41, 37, 39);
+  background-color: rgb(230, 206, 146);
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(247, 211, 211)
+}
+
+tbody tr:hover {
+  background-color: burlywood;
+}
+
+td {
+  border: 2px solid rgb(206, 243, 194);
+  border-color: gray;
+}
