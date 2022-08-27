@@ -23,11 +23,49 @@ export default class TodosList extends React.Component {
         console.log("this");
         console.log("add");
     }
+
+     findArrayElementByTitle = (array, title) => {
+        return array.find(
+            (element) => {
+          return element.title === title;
+        })
+      }    
     handleEventDel(event) {
-        this.state.
-            console.log("this", event);
-        console.log("this", event.target);
-        //console.log(id);
+        console.log(event)
+
+
+        /* first_try
+        const filteredArray = this.state.todos.filter(id => id !== todoId)
+        console.log(filteredArray);
+        this.setState({ todos: filteredArray });
+        */
+
+
+        /*
+        //second_try
+        var index = this.state.todos.indexOf(todoId);
+        console.log(index)
+        if (index > -1) { //Make sure item is present in the array, without if condition, -n indexes will be considered from the end of the array.
+          this.setState({todos: this.state.todos.splice(index, 1)})
+        }
+        console.log(this.state.todos);
+        */
+
+
+        var arrayTemp = [...this.state.todos]; // make a separate copy of the array
+        console.log(event)
+        //var index = findArrayElementByTitle(arrayTemp,event)
+        var index = arrayTemp.find(
+            (element) => {
+          return element.id === event;
+        })
+        //var index = arrayTemp.indexOf(event.target.value)
+        if (index !== -1) {
+            arrayTemp.splice(index, 1);
+            console.log(arrayTemp.length)
+          this.setState({todos: arrayTemp});
+        }
+
     }
     render() {
         return (
@@ -37,8 +75,7 @@ export default class TodosList extends React.Component {
                     (todo) => {
                         return (<TodoList todoprops={todo} key={todo.id}
                             propshandleEventAdd={this.handleEventAdd}
-                            propshandleEventDel={(event) => this.handleEventDel(event)}
-
+                            propshandleEventDel={(todoId) => { this.handleEventDel(todo.id) }}
                         />)
                     }
                 )
