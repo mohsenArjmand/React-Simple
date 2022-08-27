@@ -24,14 +24,14 @@ export default class TodosList extends React.Component {
         console.log("add");
     }
 
-     findArrayElementByTitle = (array, title) => {
+    findArrayElementByTitle = (array, title) => {
         return array.find(
             (element) => {
-          return element.title === title;
-        })
-      }    
-    handleEventDel(event) {
-        console.log(event)
+                return element.title === title;
+            })
+    }
+    handleEventDel(todoId) {
+        console.log(todoId)
 
 
         /* first_try
@@ -51,21 +51,18 @@ export default class TodosList extends React.Component {
         console.log(this.state.todos);
         */
 
-
         var arrayTemp = [...this.state.todos]; // make a separate copy of the array
-        console.log(event)
         //var index = findArrayElementByTitle(arrayTemp,event)
         var index = arrayTemp.find(
             (element) => {
-          return element.id === event;
-        })
+                return element.id === todoId;
+            })
         //var index = arrayTemp.indexOf(event.target.value)
         if (index !== -1) {
             arrayTemp.splice(index, 1);
             console.log(arrayTemp.length)
-          this.setState({todos: arrayTemp});
+            this.setState({ todos: arrayTemp });
         }
-
     }
     render() {
         return (
