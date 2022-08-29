@@ -1,17 +1,32 @@
-import React from 'react'
+import React /*, { useEffect, useState }*/ from 'react'
+import './todo.css'
 
 export default function TodoList(props) {
-    /*this.handleEventDel= ()=> {
-console.log('deelte buttomn')
-    }*/
 
-    //console.log(props)
+ const onclickspan = (e) => {
+        console.log(e.target, 'id')
+        console.log(props.todoprops.complete, 'onclickspan')
+        if (e !== -1) {
+            props.todoprops.complete = !props.todoprops.complete;
+            console.log(props.todoprops.complete[e.target.value])
+            //this.setIsComplete({ todos: arrayTemp });
+        }
+    }
     return (
         <div >
             <hr></hr>
-            <span key={'todo' + props.todoprops.id} >{props.todoprops.id} - {props.todoprops.task} </span>
-            <input type="text" key={'text' + props.todoprops.id} value={props.newinput}            />
-            <button onClick={props.propshandleEventAdd} key={'add' + props.todoprops.id}> + add </button>
+            {props.todoprops.complete ?
+                <span key={'todo1' + props.todoprops.id}
+                    onClick={onclickspan}
+                >{props.todoprops.id} - {props.todoprops.task} </span> :
+                <span key={'todo2' + props.todoprops.id} style={{
+                   color:'red'
+                }}
+                    onClick={onclickspan }
+                >{props.todoprops.id} - {props.todoprops.task} </span>
+            }
+
+
             <button onClick={props.propshandleEventDel}> - del </button>
         </div>
     )

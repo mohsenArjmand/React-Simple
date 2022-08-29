@@ -1,5 +1,7 @@
 import React from 'react'
 import TodoList from './5-TodoList'
+import AddTodo from './6-AddTodo';
+
 
 export default class TodosList extends React.Component {
     /* useState[todos, setTodos] = useState([])
@@ -13,10 +15,10 @@ export default class TodosList extends React.Component {
     state = {
         todos:
             [
-                { id: 'a1', task: 'task1' },
-                { id: 'a2', task: 'task2' },
-                { id: 'a3', task: 'task3' },
-                { id: 'a4', task: 'task4' }
+                { id: 'a1', task: 'task1' , complete:false},
+                { id: 'a2', task: 'task2', complete:false },
+                { id: 'a3', task: 'task3', complete:false },
+                { id: 'a4', task: 'task4', complete:false }
             ]
     }
     handleEventAdd = () => {
@@ -68,6 +70,7 @@ export default class TodosList extends React.Component {
         return (
             <div>
                 <div>TodosList</div>
+                <AddTodo todoprops={this.state.todos}></AddTodo>
                 {this.state.todos.map(
                     (todo) => {
                         return (<TodoList todoprops={todo} key={todo.id}
