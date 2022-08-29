@@ -4,21 +4,13 @@ import AddTodo from './6-AddTodo';
 
 
 export default class TodosList extends React.Component {
-    /* useState[todos, setTodos] = useState([])
-     //setTodos(){}
-      todos =
-         [
-             { id: 'a1', task: 'task1' },
-             { id: 'a2', task: 'task2' }
-         ]
-         */
     state = {
         todos:
             [
-                { id: 'a1', task: 'task1' , complete:false},
-                { id: 'a2', task: 'task2', complete:false },
-                { id: 'a3', task: 'task3', complete:false },
-                { id: 'a4', task: 'task4', complete:false }
+                { id: 'a1', task: 'task1', complete: false },
+                { id: 'a2', task: 'task2', complete: false },
+                { id: 'a3', task: 'task3', complete: false },
+                { id: 'a4', task: 'task4', complete: false }
             ]
     }
     handleEventAdd = () => {
@@ -34,24 +26,6 @@ export default class TodosList extends React.Component {
     }
     handleEventDel(todoId) {
         console.log(todoId)
-
-
-        /* first_try
-        const filteredArray = this.state.todos.filter(id => id !== todoId)
-        console.log(filteredArray);
-        this.setState({ todos: filteredArray });
-        */
-
-
-        /*
-        //second_try
-        var index = this.state.todos.indexOf(todoId);
-        console.log(index)
-        if (index > -1) { //Make sure item is present in the array, without if condition, -n indexes will be considered from the end of the array.
-          this.setState({todos: this.state.todos.splice(index, 1)})
-        }
-        console.log(this.state.todos);
-        */
 
         var arrayTemp = [...this.state.todos]; // make a separate copy of the array
         //var index = findArrayElementByTitle(arrayTemp,event)
@@ -70,16 +44,16 @@ export default class TodosList extends React.Component {
         return (
             <div>
                 <div>TodosList</div>
+                <hr></hr>
                 <AddTodo todoprops={this.state.todos}></AddTodo>
+                <hr></hr>
                 {this.state.todos.map(
                     (todo) => {
                         return (<TodoList todoprops={todo} key={todo.id}
                             propshandleEventAdd={this.handleEventAdd}
                             propshandleEventDel={(todoId) => { this.handleEventDel(todo.id) }}
                         />)
-                    }
-                )
-                }
+                    })}
             </div>
         )
     }

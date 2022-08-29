@@ -7,7 +7,7 @@ export default function AddTodo(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addTask(newtask);
-        //setNewtask("");
+        setNewtask("");
     }
 
     const addTask = (userInput) => {
