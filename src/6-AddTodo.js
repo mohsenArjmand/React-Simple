@@ -15,7 +15,6 @@ export default function AddTodo(props) {
         let newcopy = [...copy, { id: todolist.length + 1, task: userInput ,complete:false}];
         setTodolist(newcopy);
         console.log(todolist);
-
     }
 
     return (
