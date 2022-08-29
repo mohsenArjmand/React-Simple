@@ -26,7 +26,6 @@ export default class TodosList extends React.Component {
     }
     handleEventDel(todoId) {
         console.log(todoId)
-
         var arrayTemp = [...this.state.todos]; // make a separate copy of the array
         //var index = findArrayElementByTitle(arrayTemp,event)
         var index = arrayTemp.find(
