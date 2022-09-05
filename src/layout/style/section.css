@@ -1,0 +1,30 @@
+.sidebar {
+    flex: 1;
+}
+
+.home {
+    flex: 6;
+}
+
+.section {
+    display: flex;
+}
+
+.box {
+    border: 2.5px double burlywood;
+    margin: 2.5px;
+    padding: 1rem;
+}
+
+.login{
+    flex: 3;
+}
+.header{
+    flex: 3; 
+}
+.active{
+    color:crimson;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}
