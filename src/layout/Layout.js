@@ -24,6 +24,9 @@ export default function Layout() {
                         <div className='header'>
                             <Header></Header>
                         </div>
+                        <div className='tree'>
+                            <Header></Header>
+                        </div>
                     </div>
                     <Navigating/>
 

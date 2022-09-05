@@ -20,11 +20,14 @@
     flex: 3;
 }
 .header{
-    flex: 3; 
+    flex: 7; 
 }
 .active{
     color:crimson;
     font-size: large;
     font-style: italic;
     font-weight: bold;
+}
+.tree{
+    flex: 1;
 }
