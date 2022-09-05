@@ -25,7 +25,7 @@ export default class AppTable extends Component {
                         }
                     }
                     ,
-                    
+
                     {
                         "id": 2,
                         "name": "moh",
@@ -48,10 +48,10 @@ export default class AppTable extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.users)
+        //console.log(this.state.users)
         fetch('https://jsonplaceholder.typicode.com/users')
-            .then(   (response) =>  response.json()  )
-            .then( (data) => this.setState({ users: data })
+            .then((response) => response.json())
+            .then((data) => this.setState({ users: data })
             )
     }
 
@@ -67,14 +67,16 @@ export default class AppTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                            {this.state.users.map((user) => { return ( 
-                            <tr key={'tr'+user.id}>
-                            <td key={'name'+user.id} > {user.name}</td> 
-                            <td key={'email'+user.id} >{user.email}   </td>
-                            <td key={'website'+user.id} > {user.website} </td> 
-                             </tr>
-                             ) })}
-                        
+                        {this.state.users.map((user) => {
+                            return (
+                                <tr key={'tr' + user.id}>
+                                    <td key={'name' + user.id} > {user.name}</td>
+                                    <td key={'email' + user.id} >{user.email}   </td>
+                                    <td key={'website' + user.id} > {user.website} </td>
+                                </tr>
+                            )
+                        })}
+
                     </tbody>
                 </table>
             </div>

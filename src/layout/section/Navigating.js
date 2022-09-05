@@ -1,15 +1,14 @@
 import React, { useContext } from 'react'
 import Login from '../components/Login'
-import { Route, Routes, BrowserRouter, Router } from 'react-router-dom'
+import { Route, Routes   } from 'react-router-dom'
 import Home from '../section/Home'
 import '../style/section.css'
 import About from '../components/About'
 import NoPage from '../components/NoPage'
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import ThemeContext from '../context/ThemeContext'
 import TestContext from '../context/TestContext'
 import Logoff from '../components/Logoff'
-import Table from '../components/Table'
 import DataForTable from '../components/DataForTable'
 
 export default function Navigating() {
