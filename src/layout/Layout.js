@@ -21,10 +21,7 @@ export default function Layout() {
                     <hr></hr>
 
                     <div className='box section'>
-                        <div className='header'>
-                            <Header></Header>
-                        </div>
-                        <div className='tree'>
+                        <div className='header tree'>
                             <Header></Header>
                         </div>
                     </div>

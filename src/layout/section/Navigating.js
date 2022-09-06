@@ -29,7 +29,7 @@ export default function Navigating() {
       </div>
       <div className='home box' style={combinedTheme}>
         <Routes>
-          <Route path='/' element={<Home />}>Home</Route>
+          <Route path='/' element={<Home />}/>
           <Route path='/datafortable' element={<DataForTable />}/>
           <Route path='/login' element={<Login />} />
           <Route path='/logoff' element={<Logoff />} />
