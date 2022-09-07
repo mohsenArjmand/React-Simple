@@ -1,8 +1,8 @@
 import { Switch, Tree } from 'antd';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {ADDRESS_DEFAULT} from '../constants/Constant.js'
-import NavLinkPersonal from './NavLinkPersonal.js';
+import NavLinkPersonal from './NavLinkPersonal.js'; 
 
 export default function AntTree(treeData) {
   const [showLine, setShowLine] = useState(true);
@@ -10,16 +10,13 @@ export default function AntTree(treeData) {
   const [showLeafIcon, setShowLeafIcon] = useState(true);
 
   const onSelect = (selectedKeys, info) => {
-    console.log('selected', selectedKeys, info);
-    //console.log((info.selectedNodes[0])?.key)
-    //console.log({selectedKeys.Array})
-    //console.log(`${ADDRESS_DEFAULT}${info.selectedNodes[0]?.key}`)
+    console.log('selected', selectedKeys, info); 
     const slcnodekey= info.selectedNodes[0].key
     const slcnodetitle= info.selectedNodes[0].title
     const addressToOpen = `${ADDRESS_DEFAULT}${slcnodekey}`
-    console.log(addressToOpen, { addressToOpen })
-    //console.log(`${info.selectedNodes[0]?.key}`)
-    return (NavLinkPersonal({addressToOpen},{slcnodetitle})) 
+    console.log(addressToOpen, { addressToOpen }) 
+    console.log(addressToOpen+slcnodetitle) 
+    window.location.href=slcnodekey 
   };
 
   const onSetLeafIcon = (checked) => {
