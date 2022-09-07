@@ -1,8 +1,7 @@
 import React from 'react'
 
 export default function About() {
-// const navigate = useNavigate()
-    return (      
+     return (      
           <div >        
             <h5>
                 About

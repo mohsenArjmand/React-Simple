@@ -58,7 +58,7 @@ const treeData = [
                     },
                     {
                         title: 'لیست فرمها',
-                        key: 'table',
+                        key: 'datafortable',
                         icon: <CarryOutOutlined />,
                         switcherIcon: <FormOutlined />,
                     },
