@@ -1,6 +1,7 @@
 import { CarryOutOutlined, FormOutlined } from '@ant-design/icons'; 
 import React  from 'react';
 import AntTree from './AntTree';
+import {connect } from 'react-redux'
 const treeData = [
     {
         title: 'مدیریت ',
@@ -93,13 +94,25 @@ const treeData = [
 ];
 
 
-export default function AntTreeData() {
+function AntTreeData() {
+    console.log(this.props)
     return (
         <div>
             {AntTree(treeData)}
         </div>
     )
 }
+const mapStateToProps=()=> {}
+const mapDispatchToProps =(dispatch)=>{
+    return {
+        setItems:data=>dispatch({type:'TREE_DATA',payload:data})
+    }
+}
+
+export default connect (
+    mapStateToProps,
+    mapDispatchToProps
+)(AntTreeData)
 
 
 

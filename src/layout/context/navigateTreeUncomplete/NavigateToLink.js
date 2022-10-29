@@ -7,8 +7,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 //   console.log(tolink+title)
 //       nav(tolink)
 //     }
-    
-
 // }
 // export default NavigateToLink
 
